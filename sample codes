@@ -1,0 +1,60 @@
+// this is for ultrasonic sensor
+const int triggerPin=10;
+const int echoPin=11;
+
+long duration;
+int distance;*/
+
+/*void setup()
+{
+  pinMode (triggerPin,OUTPUT);
+  pinMode(echoPin,INPUT);
+  Serial.begin(9600);
+}
+void loop ()
+{
+  digitalWrite(triggerPin,LOW);
+  delayMicroseconds(5);
+
+  digitalWrite(triggerPin,HIGH);
+  delayMicroseconds(10);
+   digitalWrite(triggerPin,LOW);
+  delayMicroseconds(5);
+
+
+  duration=pulseIn(echoPin,HIGH);
+  distance=duration*0.034/2;
+
+if (distance <=20)
+{
+  Serial.print("Distance : ");
+  Serial.println(distance);
+  delay(250);
+}
+else
+{
+ Serial.print("Out of range:");
+ Serial.println();
+ delay(250);
+}
+}
+
+//sample codes for buzzer
+int button =8;
+int led=9;
+int status=false;
+void setup()
+{
+  pinMode(led,OUTPUT);
+  pinMode(button,INPUT_PULLUP);
+}
+void loop()
+{
+  if(digitalRead(button)==true)
+  {
+    status =! status;
+    digitalWrite(led,status);
+  }
+  while(digitalRead(button)==true);
+  delay(50);
+}
